@@ -1,29 +1,14 @@
 ﻿public class StringCalculator
 {
+    private readonly Tokenizer tokenizer = new();
+
     public int Add(string input)
     {
-        List<string> tokens = Tokenize(input);
+        List<string> tokens = tokenizer.Tokenize(input);
         List<int> numbers = ParseIntoIntegers(tokens);
         return Add(numbers);
     }
 
-    private List<string> Tokenize(string input)
-    {
-        if (input.StartsWith("//"))
-        {
-            char delimiter = input[2];
-            input = input.Substring(4);
-            string[] tokens = input.Split(delimiter);
-            return tokens.ToList();
-        }
-        else
-        {
-            char[] delimiters = { ',', '\n'};
-            string[] tokens = input.Split(delimiters);
-            return tokens.ToList();
-        }
-    }
-    
     private List<int> ParseIntoIntegers(List<string> tokens)
     {
         List<int> numbers = new List<int>();
