@@ -49,4 +49,12 @@ public class StringCalculatorTests
         int result = stringCalculator.Add("1\n2,3");
         Assert.That(result, Is.EqualTo(6));
     }
+    
+    [Test]
+    public void Add_TwoNumbers_SpecifyingDelimiter_ShouldReturnSum()
+    {
+        StringCalculator stringCalculator = new();
+        int result = stringCalculator.Add("//;\n1;2");
+        Assert.That(result, Is.EqualTo(3));
+    }
 }
