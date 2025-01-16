@@ -19,4 +19,12 @@ public class StringCalculatorTests
         int result = stringCalculator.Add("1");
         Assert.That(result, Is.EqualTo(1));
     }
+
+    [Test]
+    public void Add_TwoNumbers_ShouldReturnSum()
+    {
+        StringCalculator stringCalculator = new();
+        int result = stringCalculator.Add("1,5");
+        Assert.That(result, Is.EqualTo(6));
+    }
 }
