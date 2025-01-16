@@ -9,9 +9,19 @@
 
     private List<string> Tokenize(string input)
     {
-        char[] delimiters = { ',', '\n'};
-        string[] tokens = input.Split(delimiters);
-        return tokens.ToList();
+        if (input.StartsWith("//"))
+        {
+            char delimiter = input[2];
+            input = input.Substring(4);
+            string[] tokens = input.Split(delimiter);
+            return tokens.ToList();
+        }
+        else
+        {
+            char[] delimiters = { ',', '\n'};
+            string[] tokens = input.Split(delimiters);
+            return tokens.ToList();
+        }
     }
     
     private List<int> ParseIntoIntegers(List<string> tokens)
