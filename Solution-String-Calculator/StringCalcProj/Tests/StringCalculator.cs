@@ -11,8 +11,8 @@ public class StringCalculator
 
     private static List<string> Tokenize(string input)
     {
-        string delimiter = ",";
-        string[] tokens = input.Split(delimiter);
+        char[] delimiters = { ',', '\n'};
+        string[] tokens = input.Split(delimiters);
         return tokens.ToList();
     }
     
