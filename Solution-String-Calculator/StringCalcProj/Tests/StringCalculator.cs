@@ -4,6 +4,6 @@ public class StringCalculator
 {
     public int Add(string numbers)
     {
-        return 0;
+        return int.TryParse(numbers, out int result) ? result : 0;
     }
 }
