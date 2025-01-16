@@ -2,7 +2,7 @@ namespace StringCalcProj.Tests;
 
 public class StringCalculator
 {
-    public int Add(string input)
+    public int Add(string numbers)
     {
         return 0;
     }
