@@ -1,7 +1,5 @@
 using NUnit.Framework;
 
-namespace StringCalcProj.Tests;
-
 public class StringCalculatorTests
 {
     [Test]
