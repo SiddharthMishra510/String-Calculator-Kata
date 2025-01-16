@@ -1,0 +1,60 @@
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]evelopment/
+[Dd]ebug-*/
+[Dd]ebug-*/**
+[Dd]ebug*/*
+[Dd]ebug/*
+obj/
+bin/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer Package
+*.vssscc
+
+# Windows Installer files for Visual Studio
+.vs2019/
+.vs2017/
+
+# User-specific files for Visual Studio Code
+.vscode/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# .NET Core Build Output
+project.lock.json
+project.fragment.lock.json
+
+# JetBrains Rider
+.idea/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# ASP.NET Temporary Files
+~$*
+
+# .NET Core / ASP.NET Core / Visual Studio for Mac
+.vscode/
+.idea/
+
+# Backup and temporary file
