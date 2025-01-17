@@ -65,4 +65,12 @@ public class StringCalculatorTests
         Exception? ex = Assert.Throws<Exception>(() => stringCalculator.Add("-1"));
         Assert.That(ex?.Message, Is.EqualTo("negative numbers not allowed -1"));
     }
+
+    [Test]
+    public void Add_MultipleNegativeNumbers_ThrowsException()
+    {
+        StringCalculator stringCalculator = new();
+        Exception? ex = Assert.Throws<Exception>(() => stringCalculator.Add("-1,-2"));
+        Assert.That(ex?.Message, Is.EqualTo("negative numbers not allowed -1,-2"));
+    }
 }
