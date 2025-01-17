@@ -12,13 +12,28 @@
     private List<int> ParseIntoIntegers(List<string> tokens)
     {
         List<int> numbers = new List<int>();
+        List<int> negativeNumbers = new List<int>(); 
+        
         foreach (string token in tokens)
         {
             if (int.TryParse(token, out int result)) 
             {
-                numbers.Add(result);
+                if (result < 0)
+                {
+                    negativeNumbers.Add(result);
+                }
+                else
+                {
+                    numbers.Add(result);
+                }
             }
         }
+        
+        if (negativeNumbers.Count > 0)
+        {
+            throw new Exception($"negative numbers not allowed {string.Join(",", negativeNumbers)}");
+        }
+        
         return numbers;
     }
 
@@ -27,11 +42,6 @@
         int sum = 0;
         foreach (int number in numbers)
         {
-            if (number < 0)
-            {
-                throw new Exception($"negative numbers not allowed {number}");
-            }
-            
             sum += number;
         }
         return sum;
