@@ -27,6 +27,11 @@
         int sum = 0;
         foreach (int number in numbers)
         {
+            if (number < 0)
+            {
+                throw new Exception($"negative numbers not allowed {number}");
+            }
+            
             sum += number;
         }
         return sum;
