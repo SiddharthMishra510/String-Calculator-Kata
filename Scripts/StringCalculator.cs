@@ -7,7 +7,16 @@
     {
         List<string> tokens = tokenizer.Tokenize(input);
         List<int> numbers = parser.ParseIntegers(tokens);
-        return Add(numbers);
+
+        List<int> validNumbers = new();
+        foreach (int number in numbers)
+        {
+            if (number <= 1000)
+            {
+                validNumbers.Add(number);
+            }
+        }
+        return Add(validNumbers);
     }
 
     private int Add(List<int> numbers)

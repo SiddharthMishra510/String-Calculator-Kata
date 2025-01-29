@@ -38,8 +38,8 @@ public class StringCalculatorTests
     public void Add_TenNumbers_ShouldReturnSum()
     {
         StringCalculator stringCalculator = new();
-        int result = stringCalculator.Add("1,5,7,91,0,4,5,67,44,9000");
-        Assert.That(result, Is.EqualTo(9224));
+        int result = stringCalculator.Add("1,5,7,91,0,4,5,67,44");
+        Assert.That(result, Is.EqualTo(224));
     }
     
     [Test]
@@ -72,5 +72,13 @@ public class StringCalculatorTests
         StringCalculator stringCalculator = new();
         Exception? ex = Assert.Throws<Exception>(() => stringCalculator.Add("-1,-2"));
         Assert.That(ex?.Message, Is.EqualTo("negative numbers not allowed -1,-2"));
+    }
+
+    [Test]
+    public void Add_NumberGreaterThan1000_IgnoresTheNumber()
+    {
+        StringCalculator stringCalculator = new();
+        int result = stringCalculator.Add("2,1001");
+        Assert.That(result, Is.EqualTo(2));
     }
 }
