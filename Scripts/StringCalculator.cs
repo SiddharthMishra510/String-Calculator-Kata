@@ -2,21 +2,17 @@
 {
     private readonly Tokenizer tokenizer = new();
     private readonly Parser parser = new();
-
+    
     public int Add(string input)
     {
         List<string> tokens = tokenizer.Tokenize(input);
         List<int> numbers = parser.ParseIntegers(tokens);
-
-        List<int> validNumbers = new();
-        foreach (int number in numbers)
-        {
-            if (number <= 1000)
-            {
-                validNumbers.Add(number);
-            }
-        }
-        return Add(validNumbers);
+        ValidityChecker validityChecker = new ValidityChecker();
+        List<int> nonZeroNumbers = 
+            validityChecker.ExtractValidNumbersAndThrow(numbers, new Validator(number => number >= 0));
+        List<int> lessThan1000Numbers = 
+            validityChecker.ExtractValidNumbers(nonZeroNumbers, new Validator(number => number <= 1000));
+        return Add(lessThan1000Numbers);
     }
 
     private int Add(List<int> numbers)
